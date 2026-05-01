@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mac Lóiz – Assistência Técnica Especializada</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta name="description" content="Conserto de celulares, notebooks e Macs com diagnóstico rápido, orçamento gratuito e garantia de serviço.">
 
 <!-- Open Graph / Redes Sociais -->
@@ -71,7 +72,6 @@
     font-weight: 900;
     letter-spacing: 0.04em;
     color: var(--white);
-    text-transform: uppercase;
   }
 
   .nav-logo span { color: var(--orange); }
@@ -154,19 +154,20 @@
 
   .hero-container {
     width: 100%;
-    max-width: 960px;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
     z-index: 2;
-    gap: 2rem;
+    gap: 3rem;
   }
 
   .hero-inner {
     position: relative;
-    max-width: 600px;
+    flex: 0 0 auto;
+    max-width: 480px;
     z-index: 2;
   }
 
@@ -259,234 +260,24 @@
   .btn-secondary:hover { border-color: var(--orange); color: var(--orange); }
 
   /* ── PHONE ANIMATION ── */
-  .hero-phone-wrap {
+  /* ── SPLINE MACBOOK ── */
+  .hero-spline-wrap {
     position: relative;
     z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: 800px;
+    height: 800px;
+    will-change: transform;
+    transform-style: preserve-3d;
   }
 
-  .phone-scene {
-    position: relative;
-    width: 220px;
-  }
-
-  .phone-body {
-    width: 220px;
-    height: 440px;
-    background: linear-gradient(160deg, #1a1a1a 0%, #0d0d0d 100%);
-    border-radius: 36px;
-    border: 2px solid rgba(255,255,255,0.12);
-    box-shadow:
-      0 0 0 1px rgba(255,255,255,0.04),
-      0 40px 80px rgba(0,0,0,0.8),
-      0 0 60px rgba(255,107,0,0.12),
-      inset 0 1px 0 rgba(255,255,255,0.1);
-    position: relative;
-    overflow: hidden;
-    animation: phoneFloat 3.5s ease-in-out infinite;
-  }
-
-  @keyframes phoneFloat {
-    0%, 100% { transform: translateY(0px) rotate(-2deg); }
-    50% { transform: translateY(-18px) rotate(2deg); }
-  }
-
-  .phone-notch {
-    position: absolute;
-    top: 14px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90px;
-    height: 26px;
-    background: #000;
-    border-radius: 20px;
-    z-index: 10;
-  }
-
-  .phone-screen {
-    position: absolute;
-    inset: 8px;
-    border-radius: 28px;
-    background: #0d0d0d;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-  }
-
-  .phone-screen-header {
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 60px;
-    background: linear-gradient(180deg, rgba(20,20,20,0.95) 0%, transparent 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 16px;
-    z-index: 5;
-  }
-
-  .phone-screen-logo {
-    font-family: var(--font-display);
-    font-size: 0.85rem;
-    font-weight: 900;
-    letter-spacing: 0.08em;
-    color: var(--white);
-    text-transform: uppercase;
-  }
-
-  .phone-screen-logo span { color: var(--orange); }
-
-  .phone-icon-wrap {
-    width: 72px;
-    height: 72px;
-    background: rgba(255,107,0,0.1);
-    border: 1px solid rgba(255,107,0,0.3);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: iconPulse 2s ease-in-out infinite;
-    margin-top: 30px;
-  }
-
-  @keyframes iconPulse {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(255,107,0,0.3); }
-    50% { box-shadow: 0 0 0 12px rgba(255,107,0,0); }
-  }
-
-  .phone-icon-wrap svg {
-    width: 36px;
-    height: 36px;
-    fill: var(--orange);
-  }
-
-  .phone-stat-row {
-    display: flex;
-    gap: 10px;
-    padding: 0 16px;
+  .hero-spline-wrap spline-viewer {
     width: 100%;
-  }
-
-  .phone-stat {
-    flex: 1;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 12px;
-    padding: 10px 8px;
-    text-align: center;
-  }
-
-  .phone-stat-num {
-    font-family: var(--font-display);
-    font-size: 1.1rem;
-    font-weight: 900;
-    color: var(--orange);
+    height: 100%;
     display: block;
-    line-height: 1;
+    --spline-background: transparent;
   }
-
-  .phone-stat-label {
-    font-size: 0.52rem;
-    color: rgba(255,255,255,0.4);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    display: block;
-    margin-top: 3px;
-  }
-
-  .phone-msg {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    padding: 0 16px;
-    width: 100%;
-    animation: msgSlide 4s ease-in-out infinite;
-  }
-
-  @keyframes msgSlide {
-    0%, 20% { opacity: 0; transform: translateY(8px); }
-    30%, 80% { opacity: 1; transform: translateY(0); }
-    90%, 100% { opacity: 0; transform: translateY(-8px); }
-  }
-
-  .phone-msg-avatar {
-    width: 28px;
-    height: 28px;
-    background: rgba(255,107,0,0.2);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
-  .phone-msg-avatar svg { width: 14px; height: 14px; fill: var(--orange); }
-
-  .phone-msg-bubble {
-    background: rgba(255,255,255,0.06);
-    border-radius: 0 10px 10px 10px;
-    padding: 7px 10px;
-    flex: 1;
-  }
-
-  .phone-msg-name {
-    font-family: var(--font-display);
-    font-size: 0.6rem;
-    color: var(--orange-light);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-bottom: 2px;
-  }
-
-  .phone-msg-text {
-    font-size: 0.65rem;
-    color: rgba(255,255,255,0.6);
-    line-height: 1.4;
-  }
-
-  .phone-status-bar {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 50px;
-    background: linear-gradient(0deg, rgba(20,20,20,0.95) 0%, transparent 100%);
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding-bottom: 10px;
-  }
-
-  .phone-home-bar {
-    width: 80px;
-    height: 4px;
-    background: rgba(255,255,255,0.2);
-    border-radius: 4px;
-  }
-
-  /* glow rings */
-  .phone-ring {
-    position: absolute;
-    border-radius: 50%;
-    border: 1px solid rgba(255,107,0,0.12);
-    animation: ringExpand 3s ease-out infinite;
-  }
-  .phone-ring-1 { width: 280px; height: 280px; top: 50%; left: 50%; transform: translate(-50%,-50%); animation-delay: 0s; }
-  .phone-ring-2 { width: 360px; height: 360px; top: 50%; left: 50%; transform: translate(-50%,-50%); animation-delay: 1s; }
-  .phone-ring-3 { width: 440px; height: 440px; top: 50%; left: 50%; transform: translate(-50%,-50%); animation-delay: 2s; }
-
-  @keyframes ringExpand {
-    0% { opacity: 0.5; }
-    100% { opacity: 0; }
-  }
-
-  /* parallax on scroll */
-  .hero-phone-wrap { will-change: transform; }
 
   /* ── STATS BAR ── */
   .stats-bar {
@@ -915,7 +706,6 @@
     font-family: var(--font-display);
     font-size: 1.3rem;
     font-weight: 900;
-    text-transform: uppercase;
     letter-spacing: 0.08em;
     color: var(--white);
     margin-bottom: 0.6rem;
@@ -1311,7 +1101,7 @@
   }
 
   @media (max-width: 600px) {
-    .hero-phone-wrap { display: none; }
+    .hero-spline-wrap { display: none; }
     .services-grid { grid-template-columns: 1fr; }
     .stat-item { min-width: 120px; }
     nav { padding: 1rem 1.5rem; }
@@ -1319,6 +1109,7 @@
     .residencial { padding: 4rem 1.5rem; }
   }
 </style>
+<script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.90/build/spline-viewer.js"></script>
 </head>
 <body>
 
@@ -1366,56 +1157,8 @@
     </div>
   </div>
 
-  <div class="hero-phone-wrap" id="heroPhone">
-    <!-- Glow rings -->
-    <div class="phone-ring phone-ring-1"></div>
-    <div class="phone-ring phone-ring-2"></div>
-    <div class="phone-ring phone-ring-3"></div>
-
-    <div class="phone-scene">
-      <div class="phone-body">
-        <div class="phone-notch"></div>
-        <div class="phone-screen">
-          <!-- Header -->
-          <div class="phone-screen-header">
-            <div class="phone-screen-logo">Mac <span>Lóiz</span></div>
-          </div>
-          <!-- Icon -->
-          <div class="phone-icon-wrap">
-            <svg viewBox="0 0 24 24"><path d="M17 1H7C5.9 1 5 1.9 5 3v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm-5 19c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm5-4H7V4h10v12z"/></svg>
-          </div>
-          <!-- Stats -->
-          <div class="phone-stat-row">
-            <div class="phone-stat">
-              <span class="phone-stat-num">10+</span>
-              <span class="phone-stat-label">Anos</span>
-            </div>
-            <div class="phone-stat">
-              <span class="phone-stat-num">5★</span>
-              <span class="phone-stat-label">Google</span>
-            </div>
-            <div class="phone-stat">
-              <span class="phone-stat-num">24h</span>
-              <span class="phone-stat-label">Diagnóstico</span>
-            </div>
-          </div>
-          <!-- Mensagem animada -->
-          <div class="phone-msg">
-            <div class="phone-msg-avatar">
-              <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
-            </div>
-            <div class="phone-msg-bubble">
-              <div class="phone-msg-name">Cliente</div>
-              <div class="phone-msg-text">Meu iPhone caiu e a tela quebrou…</div>
-            </div>
-          </div>
-          <div class="phone-status-bar">
-            <div class="phone-home-bar"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
+  <div class="hero-spline-wrap" id="heroSpline">
+    <spline-viewer url="https://prod.spline.design/XI510bPTgXggolMm/scene.splinecode"></spline-viewer>
   </div>
 </section>
 
@@ -1891,6 +1634,39 @@ function sendToWhatsapp() {
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' && lb && lb.classList.contains('is-open')) closeLightbox();
   });
+})();
+
+// Spline MacBook — tilt com o mouse (rotação no eixo X e Y)
+(function() {
+  var hero = document.querySelector('.hero');
+  var wrap = document.getElementById('heroSpline');
+  if (!hero || !wrap) return;
+
+  var targetX = 0, targetY = 0, curX = 0, curY = 0;
+
+  function lerp(a, b, t) { return a + (b - a) * t; }
+
+  function tick() {
+    curX = lerp(curX, targetX, 0.07);
+    curY = lerp(curY, targetY, 0.07);
+    wrap.style.transform = 'perspective(1200px) rotateX(' + curX.toFixed(3) + 'deg) rotateY(' + curY.toFixed(3) + 'deg)';
+    requestAnimationFrame(tick);
+  }
+
+  hero.addEventListener('mousemove', function(e) {
+    var rect = hero.getBoundingClientRect();
+    var relY = (e.clientY - rect.top  - rect.height / 2) / (rect.height / 2);
+    var relX = (e.clientX - rect.left - rect.width  / 2) / (rect.width  / 2);
+    targetX = -relY * 10;
+    targetY =  relX * 6;
+  });
+
+  hero.addEventListener('mouseleave', function() {
+    targetX = 0;
+    targetY = 0;
+  });
+
+  tick();
 })();
 </script>
 </body>
